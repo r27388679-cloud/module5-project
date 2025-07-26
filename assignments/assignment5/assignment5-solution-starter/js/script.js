@@ -139,7 +139,11 @@ function chooseRandomCategory (categories) {
 
 
 // Load the menu categories view
-dc.loadMenuCategories = function () {
+dc.loadMenuCategories = RANDOM var categories = ["L", "D", "SP", "S"]; // L = Lunch, D = Dinner, SP = Specials, S = Sushi
+var randomIndex = Math.floor(Math.random() * categories.length);
+var randomCategory = categories[randomIndex];
+$dc.loadMenuItems(randomCategory);
+ () {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     allCategoriesUrl,
